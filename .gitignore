@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3 #모든 게시물이 저장된 로컬 데이터 베이스
+/static
+.DS_Store
