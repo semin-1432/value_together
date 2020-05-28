@@ -49,7 +49,7 @@
       header {
          width: 100%;
          height: 300px;
-         background: url(images/header.jpg) center no-repeat;
+         /* background: url(images/header.jpg) center no-repeat; */
          background-size: cover;
          margin: 0;
       }
@@ -142,8 +142,8 @@
 <body>
    <div id="container">
       <header>
-            <img src = "images/title1.png">
-
+            {% load staticfiles %}
+            <img src ="{% static "images/title1.png" %}">
          <nav>
             <ul id="main-nav">
                <li><a href="life">생필품</a></li>
