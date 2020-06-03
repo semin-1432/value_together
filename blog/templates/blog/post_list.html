@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html lang="ko">
 <head>
@@ -6,13 +6,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>같이의가치</title>
     <style>
-       /* @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); */ */
-       /* @import url(https://fonts.googleapis.com/css?family=Oleo+Script); */ */
-
-     * {
-       margin:0;
-      padding:0;
-     }
       body {
          background: #fff;
          font-family: "맑은고딕";
@@ -23,10 +16,7 @@
       nav a:link, a:visited {
          color: #fff;
       }
-      nav a:active {
-         color: yellow;
-      }
-       h1 {
+      h1 {
          font-size: 1.8em;
       }
       h2 {
@@ -36,84 +26,38 @@
          font-size: 1.3em;
          line-height: 2.5;
       }
-      li {
-         font-size: 1em;
-         line-height: 2;
-      }
-
-      /* 모바일 - 767px 이하 */
-      #container {
-         width: 100%;
-         margin: 0 auto;
-      }
       header {
          width: 100%;
          height: 300px;
-         /* background: url(images/header.jpg) center no-repeat; */
-         background-size: cover;4
          margin: 0;
       }
-      nav {
-         height: 50px;
+      nav
+      {
          background: #163f70;
       }
       #main-nav {
          list-style: none;
          margin: 0;
          padding: 10px;
+         text-align : center;
       }
       #main-nav li {
          display: inline-block;
          color: #fff;
+         width : 23%;
          font-family: "맑은 고딕", 돋움;
-         font-size: 0.75em;
-         margin: 1% 6%;
+         font-size: 0.8em;
+         padding : 1.5% 0;
+         border-style : solid;
+         border-width : 1px;
       }
-      section {
-         position: relative;
-         width: 100%;
-         padding: 15px 5% 10px 5%;
-      }
-      #container section:nth-child(odd) {
-         background: #eee;
-      }
-      .page-title {
-         position: absolute;
-         top: 20px;
+      .footer
+      {
+         position: fixed;
          left: 0;
-         padding: 30px 50px;
-      }
-      .page-title h1 {
-            margin-bottom: 30px;
-         }
-    .content {
-       margin: 80px auto 10px;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      width: 90%;
-      padding: 20px;
-    }
-      .content ol {
-         margin-top: 20px;
-      }
-      .sub-titles {
-         color: #0094ff;
-         font-weight: 600;
-      }
-      .photo {
-         display: none;
-      }
-      footer {
-         position: relative;
+         bottom: 0;
          width: 100%;
-         height: 100px;
-         background: #000;
-      }
-      footer p {
-         font-family: 'Oleo Script', cursive;
-         font-size: 1.5em;
-         line-height: 100px;
+         background-color: #163f70;
          color: white;
          text-align: center;
       }
@@ -129,92 +73,74 @@
       {
           float : right;
       }
-      h4
+      img.maintitle
       {
-          margin : 0;
+         display : block;
+         width : 100%;
       }
-      img
+      img.writebox
       {
+         margin : 0;
+         border : 2px solid beige;
+         border-radius : 20px;
+      }
+      fieldset
+      {
+         display : flex;
+      }
+      table
+      {
+         margin : 0;
+         padding : 2%;
          width : 100%;
       }
     </style>
 </head>
 <body>
-   <div id="container">
+   <img src = "images/title1.png" class = "maintitle">
       <header>
-            {% load staticfiles %}
-            <img src ="{% static "images/title1.png" %}">
          <nav>
             <ul id="main-nav">
-               <li><a href="life">생필품</a></li>
-               <li><a href="food">식재료</a></li>
-                    <li><a href="online">온라인상품</a></li>
-                    <li><a href="event">행사상품</a></li>
+            <li><a href="life">온라인상품</a></li>
+            <li><a href="food">식재료</a></li>
+            <li><a href="online">생필품</a></li>
+               <li><a href="event">행사상품</a></li>
             </ul>
          </nav>
-            <a href = "writing_page.html">
-                <button type = "button">글쓰기</button>
-            </a>
-            <a href = "login.html">
-                <button type = "button" class = "right-align">로그인</button>
-            </a>
       </header>
-      <div>
-          <h1><a href="/">Django Girls Blog</a></h1>
+
+      <fieldset>
+         <table>
+            <tr>
+               <td rowspan = "2"><img src = "images/first.jpg" class = "writebox" style = "width : 70%;"></td>
+               <td><form><input type = "text" size = "10" class = "writebox"></form></td>
+            </tr>
+            <tr>
+               <td><form><input type = "text" size = "10" class = "writebox"></form></td>
+            </tr>
+         </table>
+      </fieldset>
+      <div class = "footer">
+         <nav>
+            <ul id="main-nav">
+            <li><a href="mypage.html">마이페이지</a></li>
+            <li><a href="mainpage.html">홈</a></li>
+            <li><a href="writing_page.html">글쓰기</a></li>
+            <li><a href="login.html">로그인</a></li>
+            </ul>
+         </nav>
       </div>
-
-      {% for post in posts %}
-          <div>
-              <p>published: {{ post.published_date }}</p>
-              <h1><a href="">{{ post.title }}</a></h1>
-              <p>{{ post.text|linebreaksbr }}</p>
-          </div>
-      {% endfor %}
-      <section id="intro">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-      </section>
-
-        <section id="map">
-
-        </section>
-
-        <section id="choice">
-
-      </section>
-
-        <footer>
-
-        </footer>
-   </div>
 </body>
-</html>
+</html> -->
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
