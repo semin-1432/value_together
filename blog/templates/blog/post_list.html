@@ -1,26 +1,144 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>같이의가치</title>
+    <style>
+      body {
+         background: #fff;
+         font-family: "맑은고딕";
+      }
+      a {
+         text-decoration: none;
+      }
+      nav a:link, a:visited {
+         color: #fff;
+      }
+      h1 {
+         font-size: 1.8em;
+      }
+      h2 {
+         font-size: 1.3em;
+      }
+      p {
+         font-size: 1.3em;
+         line-height: 2.5;
+      }
+      header {
+         width: 100%;
+         height: 300px;
+         margin: 0;
+      }
+      nav
+      {
+         background: #163f70;
+      }
+      #main-nav {
+         list-style: none;
+         margin: 0;
+         padding: 10px;
+         text-align : center;
+      }
+      #main-nav li {
+         display: inline-block;
+         color: #fff;
+         width : 23%;
+         font-family: "맑은 고딕", 돋움;
+         font-size: 0.8em;
+         padding : 1.5% 0;
+         border-style : solid;
+         border-width : 1px;
+      }
+      .footer
+      {
+         position: fixed;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         background-color: #163f70;
+         color: white;
+         text-align: center;
+      }
+      .centered
+      {
+          text-align : center;
+      }
+      .righted
+      {
+          text-align : right;
+      }
+      .right-align
+      {
+          float : right;
+      }
+      img.maintitle
+      {
+         display : block;
+         width : 100%;
+      }
+      img.writebox
+      {
+         margin : 0;
+         border : 2px solid beige;
+         border-radius : 20px;
+      }
+      fieldset
+      {
+         display : flex;
+      }
+      table
+      {
+         margin : 0;
+         padding : 2%;
+         width : 100%;
+      }
+    </style>
+</head>
+<body>
+   <img src = "images/title1.png" class = "maintitle">
+      <header>
+         <nav>
+            <ul id="main-nav">
+            <li><a href="life">온라인상품</a></li>
+            <li><a href="food">식재료</a></li>
+            <li><a href="online">생필품</a></li>
+               <li><a href="event">행사상품</a></li>
+            </ul>
+         </nav>
+      </header>
+      <fieldset>
+         <table>
+            <tr>
+               <td rowspan = "2"><img src = "images/first.jpg" class = "writebox" style = "width : 70%;"></td>
+               <td><form><input type = "text" size = "10" class = "writebox"></form></td>
+            </tr>
+            <tr>
+               <td><form><input type = "text" size = "10" class = "writebox"></form></td>
+            </tr>
+         </table>
+      </fieldset>
+      <div class = "footer">
+         <nav>
+            <ul id="main-nav">
+            <li><a href="mypage.html">마이페이지</a></li>
+            <li><a href="mainpage.html">홈</a></li>
+            <li><a href="writing_page.html">글쓰기</a></li>
+            <li><a href="login.html">로그인</a></li>
+            </ul>
+         </nav>
+      </div>
+</body>
+</html> -->
 {% extends 'blog/base.html' %}
-{% block cont %}
-<div class="post">
-<nav>
-   <ul id="main-nav">
-   <li><a href="{% url 'online' %}">온라인상품</a></li>
-   <li><a href="{% url 'ingredients' %}">식재료</a></li>
-   <li><a href="{% url 'daily_necessity' %}">생필품</a></li>
-      <li><a href="{% url 'eventitem' %}">행사상품</a></li>
-   </ul>
-</nav>
-<div class="content container">
-  <div class="row">
-    <div class="col-md-8">
-      {% for post in posts %}
-          <div class="post">
-              <!-- <div class="date">
-                  {{ post.published_date }} -->
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
             </div>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
-        {% endfor %}
+    {% endfor %}
 {% endblock %}
-      </div>
-  </div>
