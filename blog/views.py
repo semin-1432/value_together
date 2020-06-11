@@ -11,6 +11,23 @@ def post_list(request):
     posts=Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts':posts})
 
+# def daily_neccessity(request):
+#     posts=Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+#     return render(request, 'blog/daily_necessity.html', {'posts':posts})
+
+def daily_necessity(request):
+    return render(request, 'blog/daily_necessity.html')
+
+def eventitem(request):
+    return render(request, 'blog/eventitem.html')
+
+def ingredients(request):
+    return render(request, 'blog/ingredients.html')
+
+def online(request):
+    return render(request, 'blog/online.html')
+
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
@@ -23,7 +40,8 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            # return redirect('post_detail', pk=post.pk)
+            return redirect('post_list')
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})

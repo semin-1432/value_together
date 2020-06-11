@@ -1,32 +1,78 @@
-{% extends 'blog/base.html' %}
-{% block content %}
-<div class="container">
-<img src = "images/title1.png" class = "maintitle">
-<form action="{%url create%}">
-    <fieldset>
-        <legend><strong>글 제목</strong></legend>
-        <input type = "text" placeholder = "글 제목" size = "20" maxlength = "10"  name='title' required>
-    </fieldset>
-    <fieldset>
-        <legend><strong>사진</strong></legend>
-        <input type = "file" required>
-    </fieldset>
-    <fieldset>
-        <legend><strong>카테고리 선택</strong></legend>
-        <label><input type = "checkbox" name = "categori1" value = "daily_neccessity">생필품</label>
-        <label><input type = "checkbox" name = "categori2" value = "ingredients">식재료</label>
-        <label><input type = "checkbox" name = "categori3" value = "online_product">온라인 상품</label>
-        <label><input type = "checkbox" name = "categori4" value = "event_product">행사 상품</label>
-    </fieldset>
-    <fieldset>
-        <legend><strong>가격</strong></legend>
-        <label><input type ="text" placeholder = "가격을 입력해주세요" name = "price">원</label>
-    </fieldset>
-    <fieldset>
-        <legend><strong>내용 입력</strong></legend>
-        <textarea name = "body" cols = "45" rows = "20" placeholder = "내용을 입력하세요(20자 이상)" minlength = "20"></textarea>
-    </fieldset>
-    <!-- <button type = "submit" class = "alignright size"><strong>게시</strong></button> -->
-    <input class="btn btn-dark" type="submit"  value="게시">
-</form>
-</div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>같이의 가치</title>
+    <style>
+        .centered
+        {
+            text-align : center;
+        }
+        .lefted
+        {
+            text-align : left;
+        }
+        .righted
+        {
+            text-align : right;
+        }
+        .justifyed
+        {
+            text-align : justify;
+        }
+        ul
+        {
+            list-style-type : none;
+        }
+        button.alignright
+        {
+            float : right;
+        }
+        button.size
+        {
+            width : 15%;
+            height: 5%;
+        }
+        textarea
+        {
+            width : 100%
+        }
+        img.maintitle
+        {
+            display : block;
+            width : 100%;
+        }
+    </style>
+</head>
+<body>
+    <img src = "images/title1.png" class = "maintitle">
+    <form>
+        <fieldset>
+            <legend><strong>글 제목</strong></legend>
+            <input type = "text" placeholder = "글 제목" size = "20" maxlength = "10" required>
+        </fieldset>
+        <fieldset>
+            <legend><strong>사진</strong></legend>
+            <input type = "file" required>
+        </fieldset>
+        <fieldset>
+            <legend><strong>카테고리 선택</strong></legend>
+            <label><input type = "checkbox" name = "categori1" value = "daily_neccessity">생필품</label>
+            <label><input type = "checkbox" name = "categori2" value = "ingredients">식재료</label>
+            <label><input type = "checkbox" name = "categori3" value = "online_product">온라인 상품</label>
+            <label><input type = "checkbox" name = "categori4" value = "event_product">행사 상품</label>
+        </fieldset>
+        <fieldset>
+            <legend><strong>가격</strong></legend>
+            <label><input type ="text" placeholder = "가격을 입력해주세요" id = "price">원</label>
+        </fieldset>
+        <fieldset>
+            <legend><strong>내용 입력</strong></legend>
+            <textarea name = "write" cols = "45" rows = "20" placeholder = "내용을 입력하세요(20자 이상)" minlength = "20"></textarea>
+        </fieldset>
+        <button type = "submit" class = "alignright size"><strong>게시</strong></button>
+    </form>
+
+</body>
+</html>
