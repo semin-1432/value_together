@@ -102,10 +102,10 @@
 {% block cont %}
       <nav>
          <ul id="main-nav">
-         <li><a href="{% url 'online' %}">온라인상품</a></li>
-         <li><a href="{% url 'ingredients' %}">식재료</a></li>
-         <li><a href="{% url 'daily_necessity' %}">생필품</a></li>
-         <li><a href="{% url 'eventitem' %}">행사상품</a></li>
+         <li><a href="{% url 'online' %}" class = "original">온라인상품</a></li>
+         <li><a href="{% url 'ingredients' %}" class = "original">식재료</a></li>
+         <li><a href="{% url 'daily_necessity' %}" class = "original">생필품</a></li>
+         <li><a href="{% url 'eventitem' %}" class = "original">행사상품</a></li>
          </ul>
       </nav>
       {% for post in posts %}
