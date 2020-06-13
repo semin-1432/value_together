@@ -1,9 +1,9 @@
 h1 a {
     color: #FCA205;
 }
-/* body {
+body {
     padding-left: 15px;
-} */
+}
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
@@ -16,9 +16,9 @@ h1 a {
     text-decoration: none;
 }
 
-/* .content {
+.content {
     margin-left: 40px;
-} */
+}
 
 h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
@@ -28,9 +28,9 @@ h1, h2, h3, h4 {
     color: #828282;
 }
 
-/* .save {
+.save {
     float: right;
-} */
+}
 
 .post-form textarea, .post-form input {
     width: 100%;
