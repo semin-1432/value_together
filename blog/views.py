@@ -4,6 +4,7 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 # from .forms import PostForm
 # Create your views here.
@@ -26,7 +27,6 @@ def ingredients(request):
 
 def online(request):
     return render(request, 'blog/online.html')
-
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
