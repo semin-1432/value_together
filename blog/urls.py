@@ -1,13 +1,13 @@
 from django.urls import path
 from . import views
+from django.conf.urls import include, url
+from django.contrib import admin
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post/new/', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
-    path('post/', views.daily_necessity, name='daily_necessity'),
-    path('post/', views.eventitem, name='eventitem'),
-    path('post/', views.ingredients, name='ingredients'),
-    path('post/', views.online, name='online'),
+    url(r'^$', views.login, name='login'),
+    url(r'^post/(?P<pk>\d+)/remove/$', views.post_remove, name='post_remove'),
 ]

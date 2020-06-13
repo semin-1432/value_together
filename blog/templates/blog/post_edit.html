@@ -1,7 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block cont %}
-    <h1>New post</h1>
+  <hr>
+  <p class = "notice"><strong>참고 예시</strong>
+    <br>title : (상품 이름) 같이 구매하실 분 구합니다!
+    <br>text : <strong>필수 내용 : 상품 url, 오픈채팅 url</strong>
+    <br>예시 : 구매하실 분은 이 <strong>(ex : 온라인 쇼핑 url)</strong>로 들어가서 확인해주세요!
+    <br>확인하신 분들은 <strong>(오픈채팅 url)</strong>로 들어오셔서 연락주시면 감사하겠습니다!</p>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
